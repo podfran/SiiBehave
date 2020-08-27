@@ -13,13 +13,15 @@ class RegistrationPage(SiiStorePage):
             expected_conditions.presence_of_element_located((By.CLASS_NAME, 'register-form'))
         )
 
-    def select_title(self, title: str):
-        if 'mrs' in title.lower():
-            value = 2
-        else:
-            value = 1
+    def select_title_mrs(self):
         radio = self.registration_form.find_element_by_xpath(
-            f'//input[@name="id_gender"][@value="{value}"]'
+            f'//input[@name="id_gender"][@value="2"]'
+        )
+        radio.click()
+
+    def select_title_mr(self):
+        radio = self.registration_form.find_element_by_xpath(
+            f'//input[@name="id_gender"][@value="1"]'
         )
         radio.click()
 
