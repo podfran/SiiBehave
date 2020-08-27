@@ -16,14 +16,14 @@ class LoginPage(SiiStorePage):
         )
 
     def enter_email_address(self, email_address):
-        email_address_field = self.login_form.find_element_by_xpath(
-            './/input[@type="email"]'
+        email_address_field = self.login_form.find_element_by_css_selector(
+            'input[type=email]'
         )
         email_address_field.send_keys(email_address)
 
     def enter_password(self, password):
-        password_field = self.login_form.find_element_by_xpath(
-            './/input[@type="password"]'
+        password_field = self.login_form.find_element_by_css_selector(
+            'input[type=password]'
         )
         password_field.send_keys(password)
 

@@ -17,7 +17,7 @@ class ItemPage(SiiStorePage):
 
     @property
     def cart_items_count(self):
-        items_count_element = self.driver.find_element_by_xpath('//span[@class="cart-products-count"]')
+        items_count_element = self.driver.find_element_by_css_selector('span.cart-products-count')
         return int(items_count_element.text.strip('()'))
 
     def add_to_cart(self):
@@ -29,7 +29,7 @@ class ItemPage(SiiStorePage):
         )
 
     def dismiss_prompt(self):
-        self.cart_propt.find_element_by_xpath('.//*[@class="cart-content-btn"]/button').click()
+        self.cart_propt.find_element_by_css_selector('.cart-content-btn > button').click()
         self.wait.until(
             expected_conditions.invisibility_of_element(
                 self.cart_propt

@@ -16,7 +16,7 @@ def step_impl(context):
     context.reg_page.select_title_mrs()
     context.reg_page.enter_first_name(context.first_name)
     context.reg_page.enter_last_name(context.last_name)
-    context.reg_page.enter_email_address('a7@gmail.com')
+    context.reg_page.enter_email_address('a8@gmail.com')
     context.reg_page.enter_password('12345678')
     context.main_page = context.reg_page.click_save()
 

@@ -21,7 +21,7 @@ class MainPage(SiiStorePage):
 
     @property
     def cart_items_count(self):
-        items_count_element = self.driver.find_element_by_xpath('//span[@class="cart-products-count"]')
+        items_count_element = self.driver.find_element_by_css_selector('span.cart-products-count')
         return int(items_count_element.text.strip('()'))
 
     def click_popular_item(self, number):
