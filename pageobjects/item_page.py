@@ -29,7 +29,7 @@ class ItemPage(SiiStorePage):
         )
 
     def dismiss_prompt(self):
-        self.cart_propt.find_element_by_xpath('//*[@class="cart-content-btn"]/button').click()
+        self.cart_propt.find_element_by_xpath('.//*[@class="cart-content-btn"]/button').click()
         self.wait.until(
             expected_conditions.invisibility_of_element(
                 self.cart_propt

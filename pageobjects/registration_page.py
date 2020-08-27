@@ -15,37 +15,37 @@ class RegistrationPage(SiiStorePage):
 
     def select_title_mrs(self):
         radio = self.registration_form.find_element_by_xpath(
-            f'//input[@name="id_gender"][@value="2"]'
+            f'.//input[@name="id_gender"][@value="2"]'
         )
         radio.click()
 
     def select_title_mr(self):
         radio = self.registration_form.find_element_by_xpath(
-            f'//input[@name="id_gender"][@value="1"]'
+            f'.//input[@name="id_gender"][@value="1"]'
         )
         radio.click()
 
     def enter_first_name(self, first_name: str):
         first_name_field = self.registration_form.find_element_by_xpath(
-            '//input[@name="firstname"]'
+            './/input[@name="firstname"]'
         )
         first_name_field.send_keys(first_name)
 
     def enter_last_name(self, last_name: str):
         last_name_field = self.registration_form.find_element_by_xpath(
-            '//input[@name="lastname"]'
+            './/input[@name="lastname"]'
         )
         last_name_field.send_keys(last_name)
 
     def enter_email_address(self, email_address: str):
         email_address_field = self.registration_form.find_element_by_xpath(
-            '//input[@name="email"]'
+            './/input[@name="email"]'
         )
         email_address_field.send_keys(email_address)
 
     def enter_password(self, password: str):
         password_field = self.registration_form.find_element_by_xpath(
-            '//input[@name="password"]'
+            './/input[@name="password"]'
         )
         password_field.send_keys(password)
 
