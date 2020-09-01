@@ -2,7 +2,7 @@
 from selenium.webdriver.common.by import By
 
 from pageobjects.item_page import ItemPage
-from pageobjects.uiobject import WebUIObject, SiiStorePage
+from pageobjects.common import WebUIObject, SiiStorePage
 
 
 class MainPage(SiiStorePage):

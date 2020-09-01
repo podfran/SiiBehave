@@ -3,7 +3,7 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.by import By
 
 from pageobjects.main_page import MainPage
-from pageobjects.uiobject import WebUIObject, SiiStorePage
+from pageobjects.common import WebUIObject, SiiStorePage
 
 
 class RegistrationPage(SiiStorePage):

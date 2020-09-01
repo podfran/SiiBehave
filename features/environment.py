@@ -4,7 +4,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
-from pageobjects.uiobject import Browser
+from pageobjects.common import Browser
 
 _BROWSERS = {
     'chrome': lambda: webdriver.Chrome(ChromeDriverManager().install()),
