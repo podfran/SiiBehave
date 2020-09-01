@@ -2,8 +2,7 @@
 from selenium.webdriver.common.by import By
 
 from pageobjects.customer_account_page import CustomerAccountPage
-from pageobjects.store_page import SiiStorePage
-from pageobjects.uiobject import WebUIObject
+from pageobjects.uiobject import WebUIObject, SiiStorePage
 
 
 class LoginPage(SiiStorePage):

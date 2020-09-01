@@ -1,8 +1,7 @@
 """Item page object"""
 from selenium.webdriver.common.by import By
 
-from pageobjects.store_page import SiiStorePage
-from pageobjects.uiobject import WebUIObject
+from pageobjects.uiobject import WebUIObject, SiiStorePage
 
 
 class ItemPage(SiiStorePage):
