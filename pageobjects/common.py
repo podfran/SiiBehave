@@ -52,5 +52,5 @@ class BasePage(Browser):
         return int(self.cart_count_object.text.strip('()'))
 
     def go_to(self):
-        self.driver.get(self.page_url)
+        super().driver.get(self.page_url)
         return self
