@@ -1,4 +1,5 @@
 from behave import *
+from faker import Faker
 
 from pageobjects.registration_page import RegistrationPage
 
@@ -11,10 +12,11 @@ def step_impl(context):
 
 @when('valid details are entered')
 def step_impl(context):
+    fake = Faker()
     context.reg_page.select_title_mrs()
-    context.reg_page.enter_first_name('Amelia')
-    context.reg_page.enter_last_name('Pond')
-    context.reg_page.enter_email_address('a8@gmail.com')
+    context.reg_page.enter_first_name(fake.first_name())
+    context.reg_page.enter_last_name(fake.last_name())
+    context.reg_page.enter_email_address(fake.email())
     context.reg_page.enter_password('12345678')
     context.result_page = context.reg_page.click_save()
 
