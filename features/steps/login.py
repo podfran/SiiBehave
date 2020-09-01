@@ -13,9 +13,10 @@ def step_impl(context):
 def step_impl(context):
     context.login_page.enter_email_address('a1@gmail.com')
     context.login_page.enter_password('12345678')
-    context.cust_acc_page = context.login_page.click_sign_in()
+    context.result_page = context.login_page.click_sign_in()
 
 
 @then('account page is displayed')
 def step_impl(context):
-    pass
+    header_text = context.result_page.page_header.text
+    assert header_text.lower() == 'your account'
