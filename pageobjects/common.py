@@ -1,5 +1,4 @@
 """Generic UI object for driving the POM."""
-from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as expected
 from selenium.webdriver.support.wait import WebDriverWait
@@ -33,11 +32,7 @@ class WebUIObject(Browser):
         self._web_element.send_keys(text)
 
     def is_visible(self):
-        try:
-            self._wait.until(expected.visibility_of_element_located((self.by, self.locator)))
-            return True
-        except TimeoutException:
-            return False
+        return self._web_element.is_displayed()
 
 
 class BasePage(Browser):
