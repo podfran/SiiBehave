@@ -10,6 +10,7 @@ class SiiStorePage:
         self.driver = driver
         self.wait = WebDriverWait(self.driver, 10)
         self.cart_count_object = WebUIObject(self.driver, By.CLASS_NAME, 'cart-products-count')
+        self.sign_out_link = WebUIObject(self.driver, By.CLASS_NAME, 'logout')
 
     @property
     def cart_items_count(self) -> int:

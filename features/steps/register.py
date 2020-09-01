@@ -11,16 +11,14 @@ def step_impl(context):
 
 @when('valid details are entered')
 def step_impl(context):
-    context.first_name = 'Amelia'
-    context.last_name = 'Pond'
     context.reg_page.select_title_mrs()
-    context.reg_page.enter_first_name(context.first_name)
-    context.reg_page.enter_last_name(context.last_name)
+    context.reg_page.enter_first_name('Amelia')
+    context.reg_page.enter_last_name('Pond')
     context.reg_page.enter_email_address('a8@gmail.com')
     context.reg_page.enter_password('12345678')
-    context.main_page = context.reg_page.click_save()
+    context.result_page = context.reg_page.click_save()
 
 
 @then('the user is logged in')
 def step_impl(context):
-    assert f'{context.first_name} {context.last_name}' in context.main_page.customer_account_link.text
+    assert context.result_page.sign_out_link.is_visible()
