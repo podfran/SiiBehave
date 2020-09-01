@@ -9,11 +9,11 @@ from pageobjects.uiobject import WebUIObject
 class LoginPage(SiiStorePage):
     page_url = 'http://5.196.7.235/login'
 
-    def __init__(self, driver):
-        super(LoginPage, self).__init__(driver)
-        self.email_address_field = WebUIObject(self.driver, By.NAME, 'email')
-        self.password_field = WebUIObject(self.driver, By.NAME, 'password')
-        self.sign_in_button = WebUIObject(self.driver, By.ID, 'submit-login')
+    def __init__(self):
+        super().__init__()
+        self.email_address_field = WebUIObject(By.NAME, 'email')
+        self.password_field = WebUIObject(By.NAME, 'password')
+        self.sign_in_button = WebUIObject(By.ID, 'submit-login')
 
     def enter_email_address(self, email_address):
         self.email_address_field.type(email_address)

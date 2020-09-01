@@ -9,9 +9,9 @@ from pageobjects.uiobject import WebUIObject
 class MainPage(SiiStorePage):
     page_url = 'http://5.196.7.235/'
 
-    def __init__(self, driver):
-        super().__init__(driver)
-        self.customer_account_link = WebUIObject(self.driver, By.CLASS_NAME, 'account')
+    def __init__(self):
+        super().__init__()
+        self.customer_account_link = WebUIObject(By.CLASS_NAME, 'account')
 
     def click_popular_item(self, number):
         pop_prods = self.driver.find_elements_by_tag_name('article')

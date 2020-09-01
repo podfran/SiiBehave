@@ -5,7 +5,7 @@ from pageobjects.main_page import MainPage
 
 @given('a web browser is at the home page')
 def step_impl(context):
-    context.main_page = MainPage(context.driver).go_to()
+    context.main_page = MainPage().go_to()
 
 
 @given('no items are in cart')

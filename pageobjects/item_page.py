@@ -7,9 +7,9 @@ from pageobjects.uiobject import WebUIObject
 
 class ItemPage(SiiStorePage):
     def __init__(self, driver):
-        super(ItemPage, self).__init__(driver)
-        self.add_to_cart_button = WebUIObject(self.driver, By.CLASS_NAME, 'add-to-cart')
-        self.continue_shopping_button = WebUIObject(self.driver, By.XPATH, '//button[contains(text(), "Continue")]')
+        super(ItemPage, self).__init__()
+        self.add_to_cart_button = WebUIObject(By.CLASS_NAME, 'add-to-cart')
+        self.continue_shopping_button = WebUIObject(By.XPATH, '//button[contains(text(), "Continue")]')
 
     def add_to_cart(self):
         self.add_to_cart_button.click()

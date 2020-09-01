@@ -5,7 +5,7 @@ from pageobjects.login_page import LoginPage
 
 @given('a web browser is at the Sii store login page')
 def step_impl(context):
-    context.login_page = LoginPage(context.driver).go_to()
+    context.login_page = LoginPage().go_to()
 
 
 @when('registered credentials are used')

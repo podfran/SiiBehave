@@ -10,16 +10,16 @@ from pageobjects.uiobject import WebUIObject
 class RegistrationPage(SiiStorePage):
     page_url = 'http://5.196.7.235/login?create_account=1'
 
-    def __init__(self, driver):
-        super().__init__(driver)
+    def __init__(self):
+        super().__init__()
         # The following two should - I think - reference the input object and not the span, but they don't
-        self.mr_radio = WebUIObject(self.driver, By.XPATH, '//span[input/@value="1"]')
-        self.mrs_radio = WebUIObject(self.driver, By.XPATH, '//span[input/@value="2"]')
-        self.first_name_field = WebUIObject(self.driver, By.NAME, 'firstname')
-        self.last_name_field = WebUIObject(self.driver, By.NAME, 'lastname')
-        self.email_address_field = WebUIObject(self.driver, By.NAME, 'email')
-        self.password_field = WebUIObject(self.driver, By.NAME, 'password')
-        self.save_button = WebUIObject(self.driver, By.CLASS_NAME, 'form-control-submit')
+        self.mr_radio = WebUIObject(By.XPATH, '//span[input/@value="1"]')
+        self.mrs_radio = WebUIObject(By.XPATH, '//span[input/@value="2"]')
+        self.first_name_field = WebUIObject(By.NAME, 'firstname')
+        self.last_name_field = WebUIObject(By.NAME, 'lastname')
+        self.email_address_field = WebUIObject(By.NAME, 'email')
+        self.password_field = WebUIObject(By.NAME, 'password')
+        self.save_button = WebUIObject(By.CLASS_NAME, 'form-control-submit')
 
     def select_title_mrs(self):
         self.mrs_radio.click()
@@ -41,4 +41,4 @@ class RegistrationPage(SiiStorePage):
 
     def click_save(self):
         self.save_button.click()
-        return MainPage(self.driver)
+        return MainPage()

@@ -4,6 +4,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
+from pageobjects.uiobject import Browser
+
 _BROWSERS = {
     'chrome': lambda: webdriver.Chrome(ChromeDriverManager().install()),
     'firefox': lambda: webdriver.Firefox(executable_path=GeckoDriverManager().install()),
@@ -22,10 +24,10 @@ def before_all(context):
 
 def before_scenario(context, scenario):
     try:
-        context.driver = context.get_browser_driver()
+        Browser.driver = context.get_browser_driver()
     except WebDriverException:
         pass
 
 
 def after_scenario(context, scenario):
-    context.driver.quit()
+    Browser.driver.quit()

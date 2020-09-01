@@ -7,5 +7,5 @@ from pageobjects.uiobject import WebUIObject
 
 class CustomerAccountPage(SiiStorePage):
     def __init__(self, driver):
-        super(CustomerAccountPage, self).__init__(driver)
-        self.page_header = WebUIObject(self.driver, By.CLASS_NAME, 'page-header')
+        super(CustomerAccountPage, self).__init__()
+        self.page_header = WebUIObject(By.CLASS_NAME, 'page-header')
