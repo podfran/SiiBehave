@@ -4,51 +4,39 @@ from selenium.webdriver.common.by import By
 
 from pageobjects.main_page import MainPage
 from pageobjects.store_page import SiiStorePage
+from pageobjects.uiobject import WebUIObject
 
 
 class RegistrationPage(SiiStorePage):
     def __init__(self, driver):
         super().__init__(driver)
-        self.registration_form = self.wait.until(
-            expected_conditions.presence_of_element_located((By.CLASS_NAME, 'register-form'))
-        )
+        # The following two should - I think - reference the input object and not the span, but they don't
+        self.mr_radio = WebUIObject(self.driver, By.XPATH, '//span[input/@value="1"]')
+        self.mrs_radio = WebUIObject(self.driver, By.XPATH, '//span[input/@value="2"]')
+        self.first_name_field = WebUIObject(self.driver, By.NAME, 'firstname')
+        self.last_name_field = WebUIObject(self.driver, By.NAME, 'lastname')
+        self.email_address_field = WebUIObject(self.driver, By.NAME, 'email')
+        self.password_field = WebUIObject(self.driver, By.NAME, 'password')
+        self.save_button = WebUIObject(self.driver, By.CLASS_NAME, 'form-control-submit')
 
     def select_title_mrs(self):
-        radio = self.registration_form.find_element_by_css_selector(
-            f'input[name="id_gender"][value="2"]'
-        )
-        radio.click()
+        self.mrs_radio.click()
 
     def select_title_mr(self):
-        radio = self.registration_form.find_element_by_css_selector(
-            f'input[name="id_gender"][value="1"]'
-        )
-        radio.click()
+        self.mr_radio.click()
 
     def enter_first_name(self, first_name: str):
-        first_name_field = self.registration_form.find_element_by_css_selector(
-            'input[name="firstname"]'
-        )
-        first_name_field.send_keys(first_name)
+        self.first_name_field.type(first_name)
 
     def enter_last_name(self, last_name: str):
-        last_name_field = self.registration_form.find_element_by_css_selector(
-            'input[name="lastname"]'
-        )
-        last_name_field.send_keys(last_name)
+        self.last_name_field.type(last_name)
 
     def enter_email_address(self, email_address: str):
-        email_address_field = self.registration_form.find_element_by_css_selector(
-            'input[name="email"]'
-        )
-        email_address_field.send_keys(email_address)
+        self.email_address_field.type(email_address)
 
     def enter_password(self, password: str):
-        password_field = self.registration_form.find_element_by_css_selector(
-            'input[name="password"]'
-        )
-        password_field.send_keys(password)
+        self.password_field.type(password)
 
     def click_save(self):
-        self.registration_form.find_element_by_class_name('form-control-submit').click()
+        self.save_button.click()
         return MainPage(self.driver)
