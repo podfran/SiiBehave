@@ -3,10 +3,10 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.by import By
 
 from pageobjects.main_page import MainPage
-from pageobjects.common import WebUIObject, SiiStorePage
+from pageobjects.common import WebUIObject, BasePage
 
 
-class RegistrationPage(SiiStorePage):
+class RegistrationPage(BasePage):
     page_url = 'http://5.196.7.235/login?create_account=1'
 
     def __init__(self):

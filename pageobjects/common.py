@@ -40,7 +40,7 @@ class WebUIObject(Browser):
             return False
 
 
-class SiiStorePage(Browser):
+class BasePage(Browser):
     page_url = None
 
     def __init__(self):

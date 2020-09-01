@@ -1,10 +1,10 @@
 """Item page object"""
 from selenium.webdriver.common.by import By
 
-from pageobjects.common import WebUIObject, SiiStorePage
+from pageobjects.common import WebUIObject, BasePage
 
 
-class ItemPage(SiiStorePage):
+class ItemPage(BasePage):
     def __init__(self, driver):
         super(ItemPage, self).__init__()
         self.add_to_cart_button = WebUIObject(By.CLASS_NAME, 'add-to-cart')

@@ -2,10 +2,10 @@
 from selenium.webdriver.common.by import By
 
 from pageobjects.item_page import ItemPage
-from pageobjects.common import WebUIObject, SiiStorePage
+from pageobjects.common import WebUIObject, BasePage
 
 
-class MainPage(SiiStorePage):
+class MainPage(BasePage):
     page_url = 'http://5.196.7.235/'
 
     def __init__(self):
