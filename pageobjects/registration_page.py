@@ -8,6 +8,8 @@ from pageobjects.uiobject import WebUIObject
 
 
 class RegistrationPage(SiiStorePage):
+    page_url = 'http://5.196.7.235/login?create_account=1'
+
     def __init__(self, driver):
         super().__init__(driver)
         # The following two should - I think - reference the input object and not the span, but they don't

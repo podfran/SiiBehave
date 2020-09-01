@@ -7,6 +7,8 @@ from pageobjects.uiobject import WebUIObject
 
 
 class MainPage(SiiStorePage):
+    page_url = 'http://5.196.7.235/'
+
     def __init__(self, driver):
         super().__init__(driver)
         self.customer_account_link = WebUIObject(self.driver, By.CLASS_NAME, 'account')

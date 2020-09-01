@@ -7,6 +7,8 @@ from pageobjects.uiobject import WebUIObject
 
 
 class LoginPage(SiiStorePage):
+    page_url = 'http://5.196.7.235/login'
+
     def __init__(self, driver):
         super(LoginPage, self).__init__(driver)
         self.email_address_field = WebUIObject(self.driver, By.NAME, 'email')

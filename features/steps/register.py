@@ -6,8 +6,7 @@ from pageobjects.registration_page import RegistrationPage
 
 @given('a web browser is on the Sii store registration page')
 def step_impl(context):
-    context.driver.get('http://5.196.7.235/login?create_account=1')
-    context.reg_page = RegistrationPage(context.driver)
+    context.reg_page = RegistrationPage(context.driver).go_to()
 
 
 @when('valid details are entered')

@@ -6,6 +6,8 @@ from pageobjects.uiobject import WebUIObject
 
 
 class SiiStorePage:
+    page_url = None
+
     def __init__(self, driver):
         self.driver = driver
         self.wait = WebDriverWait(self.driver, 10)
@@ -15,3 +17,7 @@ class SiiStorePage:
     @property
     def cart_items_count(self) -> int:
         return int(self.cart_count_object.text.strip('()'))
+
+    def go_to(self):
+        self.driver.get(self.page_url)
+        return self
